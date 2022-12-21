@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Welcome to myClock</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">myCLOCK</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">seeTime</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./alarm.html" target="_main">Alarm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./stopwatch.html" target="_main">Stopwatch</a>
+          </li>
+           
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Login</button>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+            data-bs-target="#signupModal">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-4 bg-dark text-white">
+    <div class="jumbotron">
+      <h1 class="display-4"> <i> Current Time is</i> : <span id="time"></span></h1>
+      <p class="lead">Current time of the country in which you are presently staying</p>
+      <b>
+        <hr class="my-4">
+      </b>
+
+      <p>For knowing the times of various countries do press on the button below and browse the time</p>
+
+      <!-- <a class="btn btn-outline-info" href="#" role="button">Browse Times</a> -->
+      <div class="dropdown">
+        <a class="btn btn-outline-primary dropdown-toggle" href="#modalLinks" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Browse Times
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#india">India</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#usa">USA</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#london">London</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#england">England</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aus">Australia</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#sa">South Africa</a>
+          </li>
+          <!-- <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#india">West Indies</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#india">Bangladesh</a>
+          </li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#india">Sri Lanka</a>
+          </li> -->
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- login modal -->
+  <div class="modal fade  " id="loginModal" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN here!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="  modal-body" style="background-image: none;">
+
+          <form>
+            <div class="form">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Username</label>
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="abhishek_saha_28">
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Login</button>
+          </form>
+
+        </div>
+        <div class="  modal-footer">
+           
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- signup modal -->
+
+  <div class="modal fade " id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">SignUp to create an account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="background-image: none;" >
+          <form action=" mailto:abhisheksahaagt@gmail.com" method="post">
+            <div class="form2">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="name@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                  <label for="inputUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="abhishek_saha_28">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Country</label>
+                  <select id="inputState" class="form-select">
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>England</option>
+                    <option>London</option>
+                    <option>South Africa</option>
+                    <option>Australia</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      I confirm my credintials
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" value="Apply" class="btn btn-outline-primary">Create Account</button>
+                </div>
+              </form>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#loginModal">Already exist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal divisons -->
+  <div id="modalLinks">
+    <!-- India Modal -->
+    <div class="modal fade" id="india" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> INDIA Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="indiatime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="indiadate"></p>
+                  <a href="https://www.india.gov.in/" target="_main">Visit INDIA</a>
+
+                </div>
+                <div class="col-auto d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src="  https://images.unsplash.com/photo-1547707188-cdbffa0bc270?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- USA modal -->
+    <div class="modal fade" id="usa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> USA Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="usatime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="usadate"></p>
+                  <a href="https://www.usa.gov/" target="_main">Visit USA</a>
+
+                </div>
+                <div class="col-auto  d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src="  https://images.unsplash.com/photo-1576606970009-7ddc4229ced7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHVzYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LONDON MOdal -->
+
+    <div class="modal fade" id="london" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> LONDON Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="londontime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="londondate"></p>
+                  <a href="https://www.cityoflondon.gov.uk/things-to-do" target="_main">Visit LONDON</a>
+
+                </div>
+                <div class="col-auto  d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src="  https://images.unsplash.com/photo-1500380804539-4e1e8c1e7118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGxvbmRvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- England modal -->
+    <div class="modal fade" id="england" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> ENGLAND Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="englandtime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="englanddate"></p>
+                  <a href="https://www.gov.uk/" target="_main">Visit ENGLAND</a>
+
+                </div>
+                <div class="col-auto  d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src="  https://images.unsplash.com/photo-1566594918188-070aa98529d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGVuZ2xhbmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Australia modal -->
+    <div class="modal fade" id="aus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> AUSTRALIA Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="austime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="ausdate"></p>
+                  <a href="https://www.australia.gov.au/" target="_main">Visit AUSTRALIA</a>
+
+                </div>
+                <div class="col-auto d-none d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src=" https://media.istockphoto.com/id/1432066852/photo/group-of-kangaroos-standing-on-the-beach-in-the-sunshine.jpg?b=1&s=170667a&w=0&k=20&c=HdPn1O1E2lnYf45quyeVWXaWXVkUTKPVYHfD8mjJ-dc=">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- south africa modal -->
+    <div class="modal fade" id="sa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:rgb(70, 25, 0);">
+            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel"> SOUTH AFRICA Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col">
+              <div class="row g-0 border solid rounded overflow-hidden flex-md-row mb-4    position-relative">
+                <div class="col p-4 d-flex flex-column position-static bg-dark">
+                  <strong class="d-inline-block mb-2 text-success">Time</strong>
+                  <h3 class="mb-0 text-white">Current Time:</h3>
+                  <div class="mb-1 text-success"><span id="satime"></span></div>
+                  <p class="mb-auto text-primary"> <span id="sadate"></p>
+                  <a href="https://www.gov.za/" target="_main">Visit SOUTH AFRICA</a>
+
+                </div>
+                <div class="col-auto  d-block">
+                  <img class="bd-placeholder-img" width="200" height="250"
+                    src="  https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c291dGglMjBhZnJpY2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                  </img>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="background-color: rgb(70, 25, 0);">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+  <!-- <script>
+    let a;
+    let date;
+    let time;
+    let Options;
+
+    setInterval(() => {
+
+
+      a = new Date();
+      Options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      date = a.toLocaleDateString(undefined, Options);
+     // time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+     time = a.toLocaleString().split(", ")[1];
+      
+      document.getElementById('time').innerHTML = time + '' + '<br>on' + '' + date;
+    }, 1000); // after every 1 second it will be updated then
+
+
+    const updateTime = () => {
+      a = new Date();
+      // india time
+      indiatime.innerHTML = a.toLocaleString('en-US', {
+        timeZone: 'Asia/Kolkata',
+      }).split(", ")[1]
+
+      indiadate.innerHTML = a.getDate({
+        timeZone: 'Asia/Kolkata',
+      }) + "/" + a.getMonth({
+        timeZone: 'Asia/Kolkata',
+      }) + "/" + a.getFullYear({
+        timeZone: 'Asia/Kolkata',
+      })
+
+      //USA time
+
+      usatime.innerHTML = a.toLocaleString('en-US', {
+        timeZone: 'America/Los_Angeles',
+      }).split(", ")[1]
+
+      usadate.innerHTML = a.getDate('en-US', {
+        timeZone: 'America/Los_Angeles',
+      }) + "/" + a.getMonth('en-US', {
+        timeZone: 'America/Los_Angeles',
+      }) + "/" + a.getFullYear('en-US', {
+        timeZone: 'America/Los_Angeles',
+      })
+
+      //london time
+
+      londontime.innerHTML = a.toLocaleString('en-GB', {
+        timeZone: 'Europe/London',
+      }).split(", ")[1]
+
+      londondate.innerHTML = a.getDate('en-GB', {
+        timeZone: 'Europe/London',
+      }) + "/" + a.getMonth('en-GB', {
+        timeZone: 'Europe/London',
+      }) + "/" + a.getFullYear('en-GB', {
+        timeZone: 'Europe/London',
+      })
+
+      //england time
+
+      englandtime.innerHTML = a.toLocaleString('en-GB', {
+        timeZone: 'Europe/London',
+      }).split(", ")[1]
+
+      englanddate.innerHTML = a.getDate('en-GB', {
+        timeZone: 'Europe/London',
+      }) + "/" + a.getMonth('en-GB', {
+        timeZone: 'Europe/London',
+      }) + "/" + a.getFullYear('en-GB', {
+        timeZone: 'Europe/London',
+      })
+
+      //Australia time
+
+      austime.innerHTML = a.toLocaleString('en-US', {
+        timeZone: 'Australia/Sydney',
+      }).split(", ")[1]
+
+      ausdate.innerHTML = a.getDate('en-US', {
+        timeZone: 'Australia/Sydney',
+      }) + "/" + a.getMonth('en-US', {
+        timeZone: 'Australia/Sydney',
+      }) + "/" + a.getFullYear('en-US', {
+        timeZone: 'Australia/Sydney',
+      })
+
+      //SA time
+
+      usatime.innerHTML = a.toLocaleString('en-SAST', {
+        timeZone: 'Africa/Johannesburg',
+      }).split(", ")[1]
+
+      usadate.innerHTML = a.getDate('en-SAST', {
+        timeZone: 'Africa/Johannesburg',
+      }) + "/" + a.getMonth('en-SAST', {
+        timeZone: 'Africa/Johannesburg',
+      }) + "/" + a.getFullYear('en-SAST', {
+        timeZone: 'Africa/Johannesburg',
+      })
+
+
+
+
+    }
+    setInterval(updateTime, 1000)
+
+
+
+  </script> -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
